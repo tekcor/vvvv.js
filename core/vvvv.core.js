@@ -21,6 +21,7 @@ define(function(require, exports) {
 
   require('thirdparty');
 
+
   require('mainloop/vvvv.dominterface');
   require('types/vvvv.shared_types');
   require('nodes/vvvv.nodes.value');
@@ -53,6 +54,8 @@ define(function(require, exports) {
   require('nodes/vvvv.nodes.buffer');
   require('nodes/vvvv.nodes.game');
   require('nodes/vvvv.nodes.react');
+require('nodes/vvvv.nodes.webgl_two');
+
 
   exports.MainLoop = require('mainloop/vvvv.mainloop');
   exports.Pin = require('core/vvvv.core.pin');

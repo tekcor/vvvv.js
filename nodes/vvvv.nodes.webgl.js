@@ -3112,8 +3112,8 @@ VVVV.Nodes.RendererWebGL = function(id, graph) {
 //quick access to shader attribute and uniform debugging
 //           console.log(JSON.stringify(layer.mesh.semantics));
 //           console.log(JSON.stringify(layer.shader.attributeSpecs));
-//           console.log(JSON.stringify(layer.shader.uniformSpecs));
-//           console.log(JSON.stringify(layer.shader.attribSemanticMap));
+            //console.log(JSON.stringify(layer.shader.uniformSpecs));
+            //console.log(JSON.stringify(layer.shader.attribSemanticMap));
 //           console.log(JSON.stringify(layer.shader.uniformSemanticMap));
 //           console.log(JSON.stringify(layer.mesh.Buffer1));
 //           console.log(JSON.stringify(layer.mesh.Buffer2));
@@ -5620,7 +5620,7 @@ VVVV.Nodes.glTF_PBR_core = function(id, graph) {
 
         var  shader = new VVVV.Types.ShaderProgram();
 
-
+        /*
         shader.attributeSpecs =  {
             "a_Position":{"varname":"a_Position","semantic":"POSITION","position":0},
             "a_Normal":{"varname":"a_Normal","semantic":"NORMAL","position":0},
@@ -5667,8 +5667,9 @@ VVVV.Nodes.glTF_PBR_core = function(id, graph) {
              "WORLD":"tW",
              "VIEW":"tV",
              "PROJECTION":"tP"
-         };
+         };  */
 
+        shader.extractSemantics(fragmentShaderCode + vertexShaderCode);
         shader.setFragmentShader(fragmentShaderCode);
         shader.setVertexShader(vertexShaderCode);
         shader.setup(gl);
